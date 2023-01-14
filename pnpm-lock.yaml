@@ -6,6 +6,7 @@ specifiers:
   '@semantic-release/exec': 6.0.3
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 9.0.1
+  conventional-changelog-conventionalcommits: 5.0.0
   date-fns: ^2.28.0
   html-entities: 2.3.3
   logseq-dateutils: ^0.0.26
@@ -28,6 +29,7 @@ devDependencies:
   '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
+  conventional-changelog-conventionalcommits: 5.0.0
   logseq-dateutils: 0.0.26
   parcel: 2.8.2
   prettier: 2.8.3
@@ -1481,6 +1483,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
+      q: 1.5.1
+    dev: true
+
+  /conventional-changelog-conventionalcommits/5.0.0:
+    resolution: {integrity: sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==}
+    engines: {node: '>=10'}
+    dependencies:
+      compare-func: 2.0.0
+      lodash: 4.17.21
       q: 1.5.1
     dev: true
 
