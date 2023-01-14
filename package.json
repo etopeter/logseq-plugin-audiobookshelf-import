@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-audiobookshelf-import",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Demistify",
   "main": "dist/index.html",
   "targets": {
@@ -30,7 +30,13 @@
     "chrome 80"
   ],
   "release": {
-    "branches": ["main", "next"]
+    "branches": ["main", "next"],
+    "plugins": [
+      [
+        "@semantic-release/npm", {
+          "npmPublish": false
+        }]
+    ]
   },
   "logseq": {
     "id": "logseq-plugin-audiobookshelf-import",
