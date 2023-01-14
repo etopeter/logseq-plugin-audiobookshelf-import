@@ -29,6 +29,9 @@
   "browserslist": [
     "chrome 80"
   ],
+  "release": {
+    "branches": ["main", "next"]
+  },
   "logseq": {
     "id": "logseq-plugin-audiobookshelf-import",
     "icon": "audiobookshelf.png",
