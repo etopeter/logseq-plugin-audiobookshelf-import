@@ -1,0 +1,42 @@
+{
+  "name": "logseq-plugin-audiobookshelf-import",
+  "version": "0.0.1",
+  "author": "Demistify",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
+  "description": "Audiobookshelf Import",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^2.28.0",
+    "html-entities": "2.3.3",
+    "mustache": "^4.2.0",
+    "pnpm": "^7.25.0"
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.14",
+    "logseq-dateutils": "^0.0.26",
+    "parcel": "^2.0.0",
+    "sweetalert": "^2.1.2",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/exec": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "9.0.1",
+    "semantic-release": "^19.0.0",
+    "prettier": "^2.8.3"
+  },
+  "browserslist": [
+    "chrome 80"
+  ],
+  "logseq": {
+    "id": "logseq-plugin-audiobookshelf-import",
+    "icon": "audiobookshelf.png",
+    "title": "Audiobookshelf Import"
+  },
+  "scripts": {
+    "dev": "parcel public/index.html --public-url ./",
+    "build": "parcel build --public-url . --no-source-maps public/index.html",
+    "format": "prettier --write **/*.{js,ts}"
+  }
+}
