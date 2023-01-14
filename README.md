@@ -35,6 +35,8 @@ Changing page prefix/postfix will create new pages and existing pages will need 
 - Choose items to import based on progress filter (eg. finished, in progress)
 - Update existing items. Toggle update wtih audiobookshelfUpdateEnabled property per item to disable.
 
+## Documentation
+- [Templates] (docs/templates.md)
 
 ### API
 
