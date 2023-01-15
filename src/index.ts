@@ -471,7 +471,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
               pageTitlePrefix + book.media.metadata.title + pageTitlePostfix;
             // Process template if any
             const renderedTitle = render(pageTitle, {
-              medeiaType: book.mediaType,
+              mediaType: book.mediaType,
             });
 
             // Test on one page

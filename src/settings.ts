@@ -70,41 +70,40 @@ export const settingsSchema: SettingSchemaDesc[] = [
     description:
       "Enter the template to use for both new and updated items. Single Page items are never updated. To update items remove item ID from Audiobooskelf Import block located at the bottom of import page.",
     default: `### books/{{{title}}}
-      collapsed:: false
-      subtitle:: {{subtitle}}
-      progress:: {{{progress}}}
-      isFinished:: {{{isFinished}}}
-      duration:: {{{duration}}}
-      currentTime:: {{{currentTime}}}
-      {{!_______________________________}}
-      {{#authors.length}}
-      authors:: {{#authors}}[[{{{name}}}]]{{/authors}}
-      {{/authors.length}}
-      {{!_______________________________}}
-      {{#narrators.length}}
-      narrators:: {{#narrators}}[[{{{.}}}]]{{/narrators}}
-      {{/narrators.length}}
-      {{!_______________________________}}
-      {{#genres.length}}
-      genres:: {{#genres}}[[{{{.}}}]]{{/genres}}
-      {{/genres.length}}
-      {{!_______________________________}}
-      source:: [Open in Audiobookshelf]({{{audiobookshelfUrl}}})
-      asin:: {{{asin}}}
-      isbn:: {{{isbn}}}
-      {{!_______________________________}}
-      {{#tags.length}}
-      tags:: {{#tags}}[[{{{.}}}]] {{/tags}}
-      {{/tags.length}}
-      {{!_______________________________}}
-      {{#startedDate}}
-      startedDate:: [[{{{startedDateParsed}}}]]
-      {{/startedDate}}
-      {{!_______________________________}}
-      {{#finishedDate}}
-      finishedDate:: [[{{{finishedDateParsed}}}]]
-      {{/finishedDate}}
-      `,
+collapsed:: false
+subtitle:: {{subtitle}}
+progress:: {{{progress}}}
+isFinished:: {{{isFinished}}}
+duration:: {{{duration}}}
+currentTime:: {{{currentTime}}}
+{{!_______________________________}}
+{{#authors.length}}
+authors:: {{#authors}}[[{{{name}}}]]{{/authors}}
+{{/authors.length}}
+{{!_______________________________}}
+{{#narrators.length}}
+narrators:: {{#narrators}}[[{{{.}}}]]{{/narrators}}
+{{/narrators.length}}
+{{!_______________________________}}
+{{#genres.length}}
+genres:: {{#genres}}[[{{{.}}}]]{{/genres}}
+{{/genres.length}}
+{{!_______________________________}}
+source:: [Open in Audiobookshelf]({{{audiobookshelfUrl}}})
+asin:: {{{asin}}}
+isbn:: {{{isbn}}}
+{{!_______________________________}}
+{{#tags.length}}
+tags:: {{#tags}}[[{{{.}}}]] {{/tags}}
+{{/tags.length}}
+{{!_______________________________}}
+{{#startedDate}}
+startedDate:: [[{{{startedDateParsed}}}]]
+{{/startedDate}}
+{{!_______________________________}}
+{{#finishedDate}}
+finishedDate:: [[{{{finishedDateParsed}}}]]
+{{/finishedDate}}`,
   },
   {
     key: "multiPageSettingsHeading",
@@ -153,45 +152,45 @@ export const settingsSchema: SettingSchemaDesc[] = [
     description:
       "Enter the template to use for both new and updated items. Setting audiobookshelfUpdateEnabled to false property may be intentional to act as granular one time import functionality.",
     default: `### books/{{{title}}}
-        collapsed:: false
-        subtitle:: {{subtitle}}
-        progress:: {{{progress}}}
-        isFinished:: {{{isFinished}}}
-        duration:: {{{duration}}}
-        currentTime:: {{{currentTime}}}
-        {{!===== Authors =====}}
-        {{#authors.length}}
-        authors:: {{#authors}}[[{{{name}}}]]{{/authors}}
-        {{/authors.length}}
-        {{!===== Narrators =====}}
-        {{#narrators.length}}
-        narrators:: {{#narrators}}[[{{{.}}}]]{{/narrators}}
-        {{/narrators.length}}
-        {{!===== Genres =====}}
-        {{#genres.length}}
-        genres:: {{#genres}}[[{{{.}}}]]{{/genres}}
-        {{/genres.length}}
-        {{!===== Series =====}}
-        {{#series}}
-        series:: {{#series}}[[{{{name}}}]]{{/series}}
-        {{/series}}
-        source:: [Open in Audiobookshelf]({{{audiobookshelfUrl}}})
-        asin:: {{{asin}}}
-        isbn:: {{{isbn}}}
-        {{!===== Tags =====}}
-        {{#tags.length}}
-        tags:: {{#tags}}[[{{{.}}}]] {{/tags}}
-        {{/tags.length}}
-        {{!===== Started Date =====}}
-        {{#startedDate}}
-        startedDate:: [[{{{startedDateParsed}}}]]
-        {{/startedDate}}
-        {{!===== Finished Date =====}}
-        {{#finishedDate}}
-        finishedDate:: [[{{{finishedDateParsed}}}]]
-        {{/finishedDate}}
-        
-        {{{description}}}`,
+collapsed:: false
+subtitle:: {{subtitle}}
+progress:: {{{progress}}}
+isFinished:: {{{isFinished}}}
+duration:: {{{duration}}}
+currentTime:: {{{currentTime}}}
+{{!===== Authors =====}}
+{{#authors.length}}
+authors:: {{#authors}}[[{{{name}}}]]{{/authors}}
+{{/authors.length}}
+{{!===== Narrators =====}}
+{{#narrators.length}}
+narrators:: {{#narrators}}[[{{{.}}}]]{{/narrators}}
+{{/narrators.length}}
+{{!===== Genres =====}}
+{{#genres.length}}
+genres:: {{#genres}}[[{{{.}}}]]{{/genres}}
+{{/genres.length}}
+{{!===== Series =====}}
+{{#series}}
+series:: {{#series}}[[{{{name}}}]]{{/series}}
+{{/series}}
+source:: [Open in Audiobookshelf]({{{audiobookshelfUrl}}})
+asin:: {{{asin}}}
+isbn:: {{{isbn}}}
+{{!===== Tags =====}}
+{{#tags.length}}
+tags:: {{#tags}}[[{{{.}}}]] {{/tags}}
+{{/tags.length}}
+{{!===== Started Date =====}}
+{{#startedDate}}
+startedDate:: [[{{{startedDateParsed}}}]]
+{{/startedDate}}
+{{!===== Finished Date =====}}
+{{#finishedDate}}
+finishedDate:: [[{{{finishedDateParsed}}}]]
+{{/finishedDate}}
+
+{{{description}}}`,
   },
   {
     key: "advancedSettingsHeading",
