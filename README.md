@@ -50,3 +50,12 @@ Changing page prefix/postfix will create new pages and existing pages will need 
 ### Running the Plugin
 
 - `Load unpacked plugin` in Logseq Desktop client.
+
+## Development
+
+- Install Dependencies run `pnpm i`
+- Develop code run `pnpm dev`
+- Fomat code run `pnpm format`
+- Open Pull Request to main branch. 
+
+>Release and Tag will be created automatically on merge to main branch. 
