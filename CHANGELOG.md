@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.4...v1.0.5) (2023-01-15)
+
+
+### Bug Fixes
+
+* Added trim at the end of the block to match Logseq saved block. Added message when import complete. ([59fea66](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/59fea6647b061f91153a2586b07566ec8849e94e))
+
 ## [1.0.4](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.3...v1.0.4) (2023-01-15)
 
 
