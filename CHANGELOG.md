@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.1...v1.0.2) (2023-01-15)
+
+
+### Bug Fixes
+
+* Plugin icon for light themes ([cc00726](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/cc00726a1442a24d08f9ff36554b7dfff963dfbc))
+
 ## [1.0.1](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.0...v1.0.1) (2023-01-14)
 
 
