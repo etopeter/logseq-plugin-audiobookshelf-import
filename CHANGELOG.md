@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.3...v1.0.4) (2023-01-15)
+
+
+### Bug Fixes
+
+* formatting template to prevent unnecessary updates ([ef8f7a6](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/ef8f7a6f97f6693882fd0697cb2a7702938395cd))
+* variable name typo for title template ([d73448e](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/d73448e3b025fee8a3af628e641a7af64c07def4))
+
 ## [1.0.3](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.2...v1.0.3) (2023-01-15)
 
 
