@@ -183,5 +183,5 @@ export function seconds_human_readable(seconds: number) {
 }
 
 export function updateStatus(msg: string) {
-  logseq.UI.showMsg(msg)
+  logseq.UI.showMsg(msg);
 }

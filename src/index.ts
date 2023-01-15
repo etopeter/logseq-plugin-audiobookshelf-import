@@ -114,7 +114,7 @@ async function createPage(
       }
     );
 
-    updateStatus("Created page: " + title)
+    updateStatus("Created page: " + title);
     return true;
   } else if (pageBlocksTree !== null && pageBlocksTree.length === 1) {
     // createFirstBlock: false creates a block to title if the name contains invalid characters
@@ -124,7 +124,7 @@ async function createPage(
       _first.content + "\n" + blocks[0].content
     );
 
-    updateStatus("Updated page: " + title)
+    updateStatus("Updated page: " + title);
     return true;
   }
   logseq.UI.showMsg(`Error creating "${title}", page not created`, "warning");
@@ -157,16 +157,15 @@ async function updatePage(page: PageEntity, blocks: Array<IBatchBlock>) {
 
     // Update only if update property is set to true or is not set at all
     if (updateBlock || updateBlock === null) {
-
       // Update only if content is different
-      const currentBlock = await logseq.Editor.getBlock(_first!.uuid)
+      const currentBlock = await logseq.Editor.getBlock(_first!.uuid);
       if (currentBlock?.content !== blocks[0].content) {
         if (currentBlock) {
-          abLog('index', currentBlock.content.toString())
+          abLog("index", currentBlock.content.toString());
         }
-          abLog('index', blocks[0].content.toString())
+        abLog("index", blocks[0].content.toString());
         await logseq.Editor.updateBlock(_first!.uuid, blocks[0].content);
-        updateStatus("Updated page: " + page.originalName)
+        updateStatus("Updated page: " + page.originalName);
       }
     }
   } else {
@@ -222,7 +221,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
   let singlePageStateTargetBlock: BlockEntity | null = null;
 
   try {
-    !inBackground && (updateStatus(fetchingTitle));
+    !inBackground && updateStatus(fetchingTitle);
 
     // SinglePage prep
     if (singlePageModeEnabled) {
