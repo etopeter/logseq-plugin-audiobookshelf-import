@@ -205,7 +205,7 @@ export const settingsSchema: SettingSchemaDesc[] = [
     type: "enum",
     default: [],
     title: "Enable debugging? (Default: None)",
-    enumChoices: ["fetchAudiobookshelf", "utils"],
+    enumChoices: ["index", "utils"],
     enumPicker: "checkbox",
     description: "Select the files to enable debugging for.",
   },
