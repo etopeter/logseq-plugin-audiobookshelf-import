@@ -20,7 +20,7 @@ module.exports = {
         "@semantic-release/exec",
         {
           prepareCmd:
-            "zip -qq -r logseq-plugin-audiobookshelf-import-${nextRelease.version}.zip dist audiobookshelf.png README.md LICENSE package.json",
+            "zip -qq -r logseq-plugin-audiobookshelf-import-${nextRelease.version}.zip dist docs audiobookshelf.png README.md LICENSE package.json",
         },
       ],
       [
