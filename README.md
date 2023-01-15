@@ -36,7 +36,10 @@ Changing page prefix/postfix will create new pages and existing pages will need 
 - Update existing items. Toggle update wtih audiobookshelfUpdateEnabled property per item to disable.
 
 ## Documentation
-- [Templates] (docs/templates.md)
+- [Templates](docs/templates.md)
+
+## Demo
+![Single Page Mode Import](./docs/single_page_import.gif)
 
 ### API
 
