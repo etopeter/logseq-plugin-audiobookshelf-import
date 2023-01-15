@@ -4,7 +4,6 @@ import {
   IBatchBlock,
   LSPluginBaseInfo,
   PageEntity,
-  IAppProxy,
 } from "@logseq/libs/dist/LSPlugin";
 
 import { format } from "date-fns";
@@ -21,6 +20,7 @@ import {
   createFilter,
   abLog,
   seconds_human_readable,
+  updateStatus,
 } from "./utils";
 
 import { render } from "mustache";
@@ -113,7 +113,8 @@ async function createPage(
         sibling: false,
       }
     );
-    //await logseq.Editor.insertBatchBlock(firstBlock!.uuid, blocks.slice(1), {sibling: true})
+
+    updateStatus("Created page: " + title)
     return true;
   } else if (pageBlocksTree !== null && pageBlocksTree.length === 1) {
     // createFirstBlock: false creates a block to title if the name contains invalid characters
@@ -122,10 +123,11 @@ async function createPage(
       _first!.uuid,
       _first.content + "\n" + blocks[0].content
     );
-    //await logseq.Editor.insertBatchBlock(_first!.uuid, blocks.slice(1), {sibling: true})
+
+    updateStatus("Updated page: " + title)
     return true;
   }
-  logseq.App.showMsg(`Error creating "${title}", page not created`, "warning");
+  logseq.UI.showMsg(`Error creating "${title}", page not created`, "warning");
   return false;
 }
 
@@ -155,10 +157,20 @@ async function updatePage(page: PageEntity, blocks: Array<IBatchBlock>) {
 
     // Update only if update property is set to true or is not set at all
     if (updateBlock || updateBlock === null) {
-      await logseq.Editor.updateBlock(_first!.uuid, blocks[0].content);
+
+      // Update only if content is different
+      const currentBlock = await logseq.Editor.getBlock(_first!.uuid)
+      if (currentBlock?.content !== blocks[0].content) {
+        if (currentBlock) {
+          abLog('index', currentBlock.content.toString())
+        }
+          abLog('index', blocks[0].content.toString())
+        await logseq.Editor.updateBlock(_first!.uuid, blocks[0].content);
+        updateStatus("Updated page: " + page.originalName)
+      }
     }
   } else {
-    logseq.App.showMsg(
+    logseq.UI.showMsg(
       `Error updating "${page.originalName}", page not loaded`,
       "error"
     );
@@ -210,7 +222,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
   let singlePageStateTargetBlock: BlockEntity | null = null;
 
   try {
-    !inBackground && (await logseq.App.showMsg("🚀 Fetching books ..."));
+    !inBackground && (updateStatus(fetchingTitle));
 
     // SinglePage prep
     if (singlePageModeEnabled) {
@@ -342,7 +354,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
             );
 
             abLog(
-              "fetchAudiobookshelf",
+              "index",
               book.media.metadata.title + " started " + itemStartedDate
             );
             const singlePageRenderedTemplate = render(singlePageItemTemplate, {
@@ -473,12 +485,12 @@ const fetchAudiobookshelf = async (inBackground = false) => {
 
               // Check if page exists
               if (page !== null && updatePages) {
-                abLog("fetchAudiobookshelf", "Updating page " + renderedTitle);
+                abLog("index", "Updating page " + renderedTitle);
                 const updated = await updatePage(page, [block]);
 
                 if (updated) {
                   abLog(
-                    "fetchAudiobookshelf",
+                    "index",
                     "Updating page " + renderedTitle + " completed"
                   );
                 } else {
@@ -486,7 +498,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
                 }
               } else {
                 // new page
-                abLog("fetchAudiobookshelf", "Creating page " + renderedTitle);
+                abLog("index", "Creating page " + renderedTitle);
 
                 const created = await createPage(renderedTitle, [block]);
                 if (created) {
