@@ -159,7 +159,7 @@ async function updatePage(page: PageEntity, blocks: Array<IBatchBlock>) {
     if (updateBlock || updateBlock === null) {
       // Update only if content is different
       const currentBlock = await logseq.Editor.getBlock(_first!.uuid);
-      if (currentBlock?.content !== blocks[0].content) {
+      if (currentBlock?.content !== blocks[0].content.trim()) {
         if (currentBlock) {
           abLog("index", currentBlock.content.toString());
         }
@@ -550,6 +550,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
         singlePageImportTargetBlock.uuid,
         blockTitle
       ));
+      updateStatus("Audiobookshelf Import complete")
   }
 };
 
