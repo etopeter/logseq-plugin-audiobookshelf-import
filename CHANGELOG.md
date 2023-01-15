@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.2...v1.0.3) (2023-01-15)
+
+
+### Bug Fixes
+
+* Update pages only if needed. Better message handling ([d1ebd3e](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/d1ebd3e4433715c49f960f50f1c940aa8f3cf69a))
+
 ## [1.0.2](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.1...v1.0.2) (2023-01-15)
 
 
