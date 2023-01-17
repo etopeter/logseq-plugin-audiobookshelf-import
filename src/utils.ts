@@ -72,23 +72,21 @@ const requestHeaders = (bearerToken: string) => ({
 export const loadBooks = async (
   serverUrl: string,
   bearerToken: string,
-  limit = 10,
-  page = 0,
+  limit: number = 10,
+  page: number = 0,
   library: string,
   filter: string
 ): Promise<[Book[], number]> => {
-  const url = new URL(
+  const url =
     serverUrl +
-      "/api/libraries/" +
-      library +
-      "/items?limit=" +
-      limit +
-      "&page=" +
-      page +
-      "&filter=" +
-      filter
-  ); // ZmluaXNoZWQ= aW4tcHJvZ3Jlc3M= filter in-progress
-
+    "/api/libraries/" +
+    library +
+    "/items?limit=" +
+    limit +
+    "&page=" +
+    page +
+    "&filter=" +
+    filter; // ZmluaXNoZWQ= aW4tcHJvZ3Jlc3M= filter in-progress
   const res = await fetch(url, {
     headers: requestHeaders(bearerToken),
   });
@@ -104,9 +102,7 @@ export const loadLibraries = async (
   bearerToken: string,
   filter: string[] //array of library names to filter
 ): Promise<Library[]> => {
-  const url = new URL(serverUrl + "/api/libraries/");
-
-  const res = await fetch(url, {
+  const res = await fetch(serverUrl + "/api/libraries/", {
     headers: requestHeaders(bearerToken),
   });
 
@@ -128,11 +124,12 @@ export const loadProgress = async (
 ): Promise<Progress> => {
   const episodeUrl = episodeId == undefined ? "" : "/" + episodeId;
 
-  const url = new URL(serverUrl + "/api/me/progress/" + libraryId + episodeUrl);
-
-  const res = await fetch(url, {
-    headers: requestHeaders(bearerToken),
-  });
+  const res = await fetch(
+    serverUrl + "/api/me/progress/" + libraryId + episodeUrl,
+    {
+      headers: requestHeaders(bearerToken),
+    }
+  );
 
   const jsonRes = (await res.json()) as Progress;
 
@@ -158,9 +155,12 @@ export function createFilter(group: string, value: string) {
 }
 
 export function abLog(functionName: string, message: string) {
-  // @ts-ignore
-  if (logseq.settings.debug.includes(functionName))
+  if (
+    logseq.settings!.hasOwnProperty("debug") &&
+    logseq.settings!.debug.includes(functionName)
+  ) {
     console.info(functionName + "> " + message);
+  }
 }
 
 export function seconds_human_readable(seconds: number) {
@@ -172,7 +172,7 @@ export function seconds_human_readable(seconds: number) {
   var minutes = Math.floor(seconds / 60);
   seconds -= minutes * 60;
   return (
-    (0 < days ? days + " d " : "") +
+    (0 < days ? days + "d " : "") +
     hours +
     "h " +
     minutes +
