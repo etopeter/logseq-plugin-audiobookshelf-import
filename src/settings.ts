@@ -193,6 +193,47 @@ finishedDate:: [[{{{finishedDateParsed}}}]]
 {{{description}}}`,
   },
   {
+    key: "podcastSettingsHeading",
+    title: "🎙️ Podcasts Settings",
+    description: "",
+    type: "heading",
+    default: null,
+  },
+  {
+    key: "singlePagePodcastItemTemplate",
+    type: "string",
+    inputAs: "textarea",
+    title: "Single Page Podcast Episode Template ",
+    description: "Enter the template to use for new podcast items.",
+    default: `### podcasts/{{{title}}}/{{{episodeTitle}}}
+collapsed:: false
+subtitle:: {{subtitle}}
+progress:: {{{progress}}}
+isFinished:: {{{isFinished}}}
+duration:: {{{duration}}}
+currentTime:: {{{currentTime}}}
+author:: [[{{{author}}}]]
+{{!===== Genres =====}}
+{{#genres.length}}
+genres:: {{#genres}}[[{{{.}}}]]{{/genres}}
+{{/genres.length}}
+source:: [Open in Audiobookshelf]({{{audiobookshelfUrl}}})
+{{!===== Tags =====}}
+{{#tags.length}}
+tags:: {{#tags}}[[{{{.}}}]] {{/tags}}
+{{/tags.length}}
+{{!===== Started Date =====}}
+{{#startedDate}}
+startedDate:: [[{{{startedDateParsed}}}]]
+{{/startedDate}}
+{{!===== Finished Date =====}}
+{{#finishedDate}}
+finishedDate:: [[{{{finishedDateParsed}}}]]
+{{/finishedDate}}
+
+{{{description}}}`,
+  },
+  {
     key: "advancedSettingsHeading",
     title: "🛠️ Advanced Settings",
     description: "",
