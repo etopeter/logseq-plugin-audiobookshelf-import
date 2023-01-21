@@ -6,22 +6,24 @@ import {
   PageEntity,
 } from "@logseq/libs/dist/LSPlugin";
 
-import { format } from "date-fns";
+//import { format } from "date-fns";
 
 import { settingsSchema } from "./settings";
 
 import {
-  Book,
+  loadUser,
   loadBooks,
-  Library,
+  loadPodcasts,
   loadLibraries,
   loadProgress,
-  decodeHTML,
   createFilter,
   abLog,
-  seconds_human_readable,
   updateStatus,
+  renderTemplate,
+  userMediaProgress,
 } from "./utils";
+
+import { Library, BookLibraryItem, PodcastLibraryItem } from "./schema";
 
 import { render } from "mustache";
 
@@ -32,7 +34,7 @@ interface Settings {
   serverUrl: string;
   serverToken: string;
   pageName: string;
-  importProgressFilters: [];
+  importProgressFilters: string[];
   libraryNameList: string;
   singlePageModeEnabled: boolean;
   createPages: boolean;
@@ -41,7 +43,9 @@ interface Settings {
   pageTitlePostfix: string;
   singlePageItemTemplate: string;
   multiPageItemTemplate: string;
+  singlePagePodcastItemTemplate: string;
   disabled: false;
+  debug: [];
 }
 
 interface AudiobookshelfBlock {
@@ -52,12 +56,6 @@ interface AudiobookshelfBlock {
 const delay = (t = 100) => new Promise((r) => setTimeout(r, t));
 let loading = false;
 let pluginId = "logseq-plugin-audiobookshelf-import";
-
-// @ts-ignore
-const partial =
-  (func, ...args) =>
-  (...rest) =>
-    func(...args, ...rest);
 
 /**
  * main entry
@@ -166,7 +164,11 @@ async function updatePage(page: PageEntity, blocks: Array<IBatchBlock>) {
         abLog("index", blocks[0].content.toString());
         await logseq.Editor.updateBlock(_first!.uuid, blocks[0].content);
         updateStatus("Updated page: " + page.originalName);
+      } else {
+        abLog("index", "Blocks are identical");
       }
+    } else {
+      abLog("index", "Update block not met");
     }
   } else {
     logseq.UI.showMsg(
@@ -192,11 +194,13 @@ const fetchAudiobookshelf = async (inBackground = false) => {
     singlePageModeEnabled,
     singlePageItemTemplate,
     multiPageItemTemplate,
+    singlePagePodcastItemTemplate,
     createPages,
     updatePages,
     pageTitlePrefix,
     pageTitlePostfix,
     pageName,
+    debug,
   } = logseq.settings as Settings;
 
   const preferredDateFormat = (await logseq.App.getUserConfigs())
@@ -288,7 +292,9 @@ const fetchAudiobookshelf = async (inBackground = false) => {
 
     let libraries: Library[] = [];
     let booksFilters: string[] = [];
-    let books: Book[] = [];
+    let books: BookLibraryItem[] = [];
+    let podcasts: PodcastLibraryItem[] = [];
+    let audiobookshelfUser = await loadUser(serverUrl, serverToken);
 
     // Creafe list of filters
     for (let filterName of importProgressFilters) {
@@ -297,8 +303,9 @@ const fetchAudiobookshelf = async (inBackground = false) => {
     }
 
     // Variable to collect all books before writing to Logseq
-    let booksBatch: IBatchBlock[] = [];
+    let singlePageItemBatch: IBatchBlock[] = [];
     let singlePageStateBatch: IBatchBlock[] = [];
+    let multiPageItemBatch: IBatchBlock[] = [];
 
     // Create library names to filter
     let libraryNameListSanitized = libraryNameList.replace(
@@ -315,114 +322,64 @@ const fetchAudiobookshelf = async (inBackground = false) => {
     libraries = await loadLibraries(serverUrl, serverToken, libraryFilter);
 
     // Iterate over libraries
-    for (let i = 0; i < libraries.length; i++) {
-      // Iterate over filters
-      for (let booksFilter of booksFilters) {
-        // Iterate over pages
-        for (
-          let libraryPage = 0, libraryItemsTotal = 0, libraryPages = 0;
-          libraryPage <= libraryPages;
-          libraryPage++
-        ) {
-          [books, libraryItemsTotal] = await loadBooks(
-            serverUrl,
-            serverToken,
-            libraryPage,
-            100,
-            libraries[i].id,
-            booksFilter
-          );
-
-          libraryPages = Math.ceil(libraryItemsTotal / 100);
-
-          for (const book of books) {
-            // Get Item Progress
-            // TODO handle podcasts
-            const itemProgress = await loadProgress(
+    for (let library of libraries) {
+      if (library.mediaType == "book") {
+        // Iterate over filters
+        for (let booksFilter of booksFilters) {
+          // Iterate over pages
+          for (
+            let libraryPage = 0, libraryItemsTotal = 0, libraryPages = 0;
+            libraryPage <= libraryPages;
+            libraryPage++
+          ) {
+            [books, libraryItemsTotal] = await loadBooks(
               serverUrl,
               serverToken,
-              book.id
-            );
-            const itemStartedDate = format(
-              new Date(itemProgress.startedAt),
-              preferredDateFormat
-            );
-            const itemFinishedDate = format(
-              new Date(itemProgress.finishedAt),
-              preferredDateFormat
+              libraryPage,
+              25,
+              library.id,
+              booksFilter
             );
 
-            abLog(
-              "index",
-              book.media.metadata.title + " started " + itemStartedDate
-            );
-            const singlePageRenderedTemplate = render(singlePageItemTemplate, {
-              audiobookshelfUrl: `${serverUrl}/item/${book.id}`,
-              asin: book.media.metadata.asin,
-              authors: book.media.metadata.authors,
-              description: book.media.metadata.description,
-              duration: seconds_human_readable(itemProgress.duration),
-              currentTime: seconds_human_readable(itemProgress.currentTime),
-              isFinished: itemProgress.isFinished,
-              explicit: book.media.metadata.explicit,
-              genres: book.media.metadata.genres,
-              isbn: book.media.metadata.isbn,
-              startedDate: itemProgress.startedAt,
-              startedDateParsed: itemStartedDate,
-              finishedDate: itemProgress.finishedAt,
-              finishedDateParsed: itemFinishedDate,
-              language: book.media.metadata.language,
-              narrators: book.media.metadata.narrators,
-              progress:
-                (itemProgress.progress * 100).toFixed(
-                  itemProgress.progress == 1 ? 0 : 2
-                ) + "%",
-              publishedDate: book.media.metadata.publishedDate,
-              publishedYear: book.media.metadata.publishedYear,
-              publisher: book.media.metadata.publisher,
-              series: book.media.metadata.series,
-              subtitle: book.media.metadata.subtitle,
-              tags: book.media.tags,
-              title: book.media.metadata.title,
-            });
+            libraryPages = Math.ceil(libraryItemsTotal / 25);
 
-            const multiPageRenderedTemplate = render(multiPageItemTemplate, {
-              audiobookshelfUrl: `${serverUrl}/item/${book.id}`,
-              asin: book.media.metadata.asin,
-              authors: book.media.metadata.authors,
-              description: book.media.metadata.description,
-              duration: seconds_human_readable(itemProgress.duration),
-              currentTime: seconds_human_readable(itemProgress.currentTime),
-              isFinished: itemProgress.isFinished,
-              explicit: book.media.metadata.explicit,
-              genres: book.media.metadata.genres,
-              isbn: book.media.metadata.isbn,
-              startedDate: itemProgress.startedAt,
-              startedDateParsed: itemStartedDate,
-              finishedDate: itemProgress.finishedAt,
-              finishedDateParsed: itemFinishedDate,
-              language: book.media.metadata.language,
-              narrators: book.media.metadata.narrators,
-              progress:
-                (itemProgress.progress * 100).toFixed(
-                  itemProgress.progress == 1 ? 0 : 2
-                ) + "%",
-              publishedDate: book.media.metadata.publishedDate,
-              publishedYear: book.media.metadata.publishedYear,
-              publisher: book.media.metadata.publisher,
-              series: book.media.metadata.series,
-              subtitle: book.media.metadata.subtitle,
-              tags: book.media.tags,
-              title: book.media.metadata.title,
-            });
+            for (const book of books) {
+              /*
+              const itemProgress = await loadProgress(
+                serverUrl,
+                serverToken,
+                book.id
+              );
+              */
+              const itemProgress = await userMediaProgress(
+                audiobookshelfUser,
+                book.id,
+              );
 
-            //console.log(content)
+              const singlePageRenderedTemplate = renderTemplate(
+                singlePageItemTemplate,
+                serverUrl,
+                preferredDateFormat,
+                "book",
+                itemProgress,
+                book
+              );
+              const multiPageRenderedTemplate = renderTemplate(
+                multiPageItemTemplate,
+                serverUrl,
+                preferredDateFormat,
+                "book",
+                itemProgress,
+                book
+              );
 
-            if (singlePageModeEnabled && singlePageStateTargetBlock) {
-              // update existing block if book is already in the state block
-              const existingBlocks = (
-                await logseq.DB.datascriptQuery<BlockEntity[]>(
-                  `[:find (pull ?b [*])
+              //console.log(content)
+
+              if (singlePageModeEnabled && singlePageStateTargetBlock) {
+                // update existing block if book is already in the state block
+                const existingBlocks = (
+                  await logseq.DB.datascriptQuery<BlockEntity[]>(
+                    `[:find (pull ?b [*])
                     :where
                       [?b :block/page ?p]
                       [?p :block/original-name "${pageName}"]
@@ -432,10 +389,10 @@ const fetchAudiobookshelf = async (inBackground = false) => {
                       [(= ?s "${singlePageStateTargetBlock.uuid}")]
                       [?b :block/content ?c]
                       [(clojure.string/includes? ?c "${book.id}")]]`
-                )
-              ).flat();
+                  )
+                ).flat();
 
-              /*
+                /*
               if (existingBlocks.length > 0) {
                 isNewBook = false
                 const existingBlock = existingBlocks[0]
@@ -452,64 +409,144 @@ const fetchAudiobookshelf = async (inBackground = false) => {
               }
               */
 
-              // If item wasn't imported
-              if (existingBlocks.length == 0) {
-                // Add to books block
-                booksBatch.unshift({
-                  content: singlePageRenderedTemplate,
-                });
+                // If item wasn't imported
+                if (existingBlocks.length == 0) {
+                  // Add to books block
+                  singlePageItemBatch.unshift({
+                    content: singlePageRenderedTemplate,
+                  });
 
-                // Add to state block
-                singlePageStateBatch.unshift({
-                  content: book.id + "." + book.media.metadata.title,
-                });
+                  // Add to state block
+                  singlePageStateBatch.unshift({
+                    content: book.id + "." + book.media.metadata.title,
+                  });
+                }
               }
-            }
 
-            // Compute Audiobookshelf item page title
-            const pageTitle =
-              pageTitlePrefix + book.media.metadata.title + pageTitlePostfix;
-            // Process template if any
-            const renderedTitle = render(pageTitle, {
-              mediaType: book.mediaType,
-            });
+              // Compute Audiobookshelf item page title
+              const pageTitle =
+                pageTitlePrefix + book.media.metadata.title + pageTitlePostfix;
+              // Process template if any
+              const renderedTitle = render(pageTitle, {
+                mediaType: book.mediaType,
+              });
 
-            // Test on one page
-            if (createPages == true) {
-              const page = await logseq.Editor.getPage(renderedTitle);
+              if (createPages == true) {
+                const page = await logseq.Editor.getPage(renderedTitle);
 
-              const block: IBatchBlock = {
-                content: multiPageRenderedTemplate,
-              };
+                const block: IBatchBlock = {
+                  content: multiPageRenderedTemplate,
+                };
 
-              // Check if page exists
-              if (page !== null && updatePages) {
-                abLog("index", "Updating page " + renderedTitle);
-                const updated = await updatePage(page, [block]);
-
-                if (updated) {
-                  abLog(
-                    "index",
-                    "Updating page " + renderedTitle + " completed"
-                  );
+                // Check if page exists
+                if (page !== null && updatePages) {
+                  abLog("index", "Updating page " + renderedTitle);
+                  updatePage(page, [block]);
                 } else {
-                  console.info("Error updating page " + renderedTitle);
-                }
-              } else {
-                // new page
-                abLog("index", "Creating page " + renderedTitle);
+                  // new page
+                  abLog("index", "Creating page " + renderedTitle);
 
-                const created = await createPage(renderedTitle, [block]);
-                if (created) {
-                  console.info("Creating " + renderedTitle + " completed");
-                } else {
-                  console.info("Error creating page " + renderedTitle);
+                  const created = await createPage(renderedTitle, [block]);
+                  if (created) {
+                    console.info("Creating " + renderedTitle + " completed");
+                  } else {
+                    console.info("Error creating page " + renderedTitle);
+                  }
+                } // END New Page
+              } // END Page logic
+            } // END Books
+          } //END Pagination
+        } // END Filters
+      } // END Library = book
+
+      if (library.mediaType == "podcast") {
+
+        // Iterate over pages
+        for (
+          let libraryPage = 0, libraryItemsTotal = 0, libraryPages = 0;
+          libraryPage <= libraryPages;
+          libraryPage++
+        ) {
+          [podcasts, libraryItemsTotal] = await loadPodcasts(
+            serverUrl,
+            serverToken,
+            libraryPage,
+            25,
+            library.id
+          );
+
+          libraryPages = Math.ceil(libraryItemsTotal / 25);
+
+          for (const podcast of podcasts) {
+            console.log(podcast);
+            for (const episode of podcast.media.episodes) {
+              const itemProgress = await userMediaProgress(
+                audiobookshelfUser,
+                podcast.media.libraryItemId,
+                episode.id
+              );
+
+              // Continue with Podcast episodes that are either in progress or finished
+              if (
+                (itemProgress.isFinished == true &&
+                  importProgressFilters.includes("finished")) ||
+                (itemProgress.isFinished == false &&
+                  itemProgress.progress > 0 &&
+                  importProgressFilters.includes("in-progress"))
+              ) {
+                const singlePagePodcastRenderedTemplate = renderTemplate(
+                  singlePagePodcastItemTemplate,
+                  serverUrl,
+                  preferredDateFormat,
+                  "podcast",
+                  itemProgress,
+                  undefined,
+                  podcast,
+                  episode
+                );
+
+                abLog("index", singlePagePodcastRenderedTemplate);
+
+                if (singlePageModeEnabled && singlePageStateTargetBlock) {
+                  // update existing block if book is already in the state block
+                  const existingBlocks = (
+                    await logseq.DB.datascriptQuery<BlockEntity[]>(
+                      `[:find (pull ?b [*])
+                      :where
+                        [?b :block/page ?p]
+                        [?p :block/original-name "${pageName}"]
+                        [?b :block/parent ?parent]
+                        [?parent :block/uuid ?u]
+                        [(str ?u) ?s]
+                        [(= ?s "${singlePageStateTargetBlock.uuid}")]
+                        [?b :block/content ?c]
+                        [(clojure.string/includes? ?c "${episode.id}")]]`
+                    )
+                  ).flat();
+
+                  // If item wasn't imported
+                  if (existingBlocks.length == 0) {
+                    // Add to books block
+                    singlePageItemBatch.unshift({
+                      content: singlePagePodcastRenderedTemplate,
+                    });
+
+                    // Add to state block
+                    singlePageStateBatch.unshift({
+                      content:
+                        episode.id +
+                        "." +
+                        podcast.media.metadata.title +
+                        "." +
+                        episode.title,
+                    });
+                  }
                 }
-              } // END New Page
-            } // END Page logic
-          } // END Books
-        } //END Pagination
-      } // END Filters
+              } // END Filter Podcasts in progress or finished
+            } // END Episode
+          }
+        }
+      } // END Library = Podcast
     } // END Libraries
 
     // Save books to single mode page
@@ -533,10 +570,10 @@ const fetchAudiobookshelf = async (inBackground = false) => {
         );
       }
 
-      booksBatch.length > 0 &&
+      singlePageItemBatch.length > 0 &&
         (await logseq.Editor.insertBatchBlock(
           singlePageImportTargetBlock.uuid,
-          booksBatch,
+          singlePageItemBatch,
           {
             before: true,
             sibling: false,
@@ -550,7 +587,7 @@ const fetchAudiobookshelf = async (inBackground = false) => {
         singlePageImportTargetBlock.uuid,
         blockTitle
       ));
-      updateStatus("Audiobookshelf Import complete")
+    updateStatus("Audiobookshelf Import complete");
   }
 };
 
