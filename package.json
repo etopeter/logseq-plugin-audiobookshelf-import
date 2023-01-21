@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "^0.0.14",
-    "LSPlugin": "link:@logseq/libs/dist/LSPlugin",
     "date-fns": "^2.28.0",
     "html-entities": "2.3.3",
     "mustache": "^4.2.0",
