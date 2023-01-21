@@ -344,10 +344,16 @@ const fetchAudiobookshelf = async (inBackground = false) => {
             libraryPages = Math.ceil(libraryItemsTotal / 25);
 
             for (const book of books) {
+              /*
               const itemProgress = await loadProgress(
                 serverUrl,
                 serverToken,
                 book.id
+              );
+              */
+              const itemProgress = await userMediaProgress(
+                audiobookshelfUser,
+                book.id,
               );
 
               const singlePageRenderedTemplate = renderTemplate(
@@ -454,7 +460,6 @@ const fetchAudiobookshelf = async (inBackground = false) => {
       } // END Library = book
 
       if (library.mediaType == "podcast") {
-        console.log("HITTING PODCAST_________________________");
 
         // Iterate over pages
         for (
