@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.6...v1.1.0) (2023-01-21)
+
+
+### Bug Fixes
+
+* Added documentation for podcasts ([b538070](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/b538070aad131a4efc5571236dfb7fd98d3bcf1c))
+
+
+### Features
+
+* Added support for Podcasts on single page ([8b88700](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/8b88700e4216cafeb0db61fa4f6e42f0576b78a3))
+* Added support for Podcasts on single page ([addffbf](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/commit/addffbffbe56615f5cadeb936b7a858b0116b9f2))
+
 ## [1.0.6](https://github.com/etopeter/logseq-plugin-audiobookshelf-import/compare/v1.0.5...v1.0.6) (2023-01-17)
 
 
