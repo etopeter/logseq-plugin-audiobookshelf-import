@@ -15,15 +15,16 @@
         "updatedAt": 1650621110769,
         "isMissing": false,
         "isInvalid": false,
-        "mediaType": "book",
         "media": {
           "metadata": {
             "title": "Wizards First Rule",
             "titleIgnorePrefix": "Wizards First Rule",
             "subtitle": null,
-            "authorName": "Terry Goodkind",
-            "narratorName": "Sam Tsoutsouvas",
-            "seriesName": "Sword of Truth",
+            "authors": ["Terry Goodkind"],
+            "narrators": ["Sam Tsoutsouvas"],
+            "series": {
+              "title": "Sword of Truth"
+            },
             "genres": [
               "Fantasy"
             ],
@@ -36,6 +37,7 @@
             "language": null,
             "explicit": false
           },
+          "libraryItemId": "li_8gch9ve09orgn4fdz8",
           "coverPath": "/audiobooks/Terry Goodkind/Sword of Truth/Wizards First Rule/cover.jpg",
           "tags": [],
           "numTracks": 2,
@@ -65,6 +67,6 @@
     "filterBy": "authors.YXV0X3ozbGVpbWd5Ymw3dWYzeTRhYg==",
     "mediaType": "book",
     "minified": false,
-    "collapseseries": true,
+    "collapseseries": false,
     "include": ""
   }

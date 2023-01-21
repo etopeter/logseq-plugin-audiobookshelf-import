@@ -1,0 +1,448 @@
+{
+    "results": [
+        {
+            "id": "li_884frz7oyaaesl3et9",
+            "ino": "75301266",
+            "libraryId": "lib_tsg26qi492qdmpmrqu",
+            "folderId": "fol_r2v0rc25nx7kz2oiqm",
+            "path": "/podcasts/Lex Fridman Podcast",
+            "relPath": "Lex Fridman Podcast",
+            "isFile": false,
+            "mtimeMs": 1674097373082,
+            "ctimeMs": 1674101672442,
+            "birthtimeMs": 1674097299726,
+            "addedAt": 1674097377998,
+            "updatedAt": 1674101829564,
+            "lastScan": 1674101680238,
+            "scanVersion": "2.2.12",
+            "isMissing": false,
+            "isInvalid": false,
+            "mediaType": "podcast",
+            "media": {
+                "libraryItemId": "li_884frz7oyaaesl3et9",
+                "metadata": {
+                    "title": "Lex Fridman Podcast",
+                    "author": "Lex Fridman",
+                    "description": null,
+                    "releaseDate": "2023-01-11T17:36:00Z",
+                    "genres": [
+                        "Technology",
+                        "Podcasts",
+                        "Science"
+                    ],
+                    "feedUrl": "https://lexfridman.com/feed/podcast/",
+                    "imageUrl": "https://is2-ssl.mzstatic.com/image/thumb/Podcasts115/v4/3e/e3/9c/3ee39c89-de08-47a6-7f3d-3849cef6d255/mza_16657851278549137484.png/600x600bb.jpg",
+                    "itunesPageUrl": "https://podcasts.apple.com/us/podcast/lex-fridman-podcast/id1434243584?uo=4",
+                    "itunesId": 1434243584,
+                    "itunesArtistId": null,
+                    "explicit": false,
+                    "language": null
+                },
+                "coverPath": "/podcasts/Lex Fridman Podcast/folder.png",
+                "tags": [],
+                "episodes": [
+                    {
+                        "libraryItemId": "li_884frz7oyaaesl3et9",
+                        "id": "ep_wbq22errhqyzf245vu",
+                        "index": 1,
+                        "season": null,
+                        "episode": null,
+                        "episodeType": null,
+                        "title": "351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram",
+                        "subtitle": null,
+                        "description": null,
+                        "enclosure": null,
+                        "pubDate": null,
+                        "audioFile": {
+                            "index": null,
+                            "ino": "75296545",
+                            "metadata": {
+                                "filename": "351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                                "ext": ".mp3",
+                                "path": "/podcasts/Lex Fridman Podcast/351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                                "relPath": "351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                                "size": 107209358,
+                                "mtimeMs": 1674097383520,
+                                "ctimeMs": 1674101672442,
+                                "birthtimeMs": 1674097373082
+                            },
+                            "addedAt": 1674097378572,
+                            "updatedAt": 1674097378572,
+                            "trackNumFromMeta": null,
+                            "discNumFromMeta": null,
+                            "trackNumFromFilename": null,
+                            "discNumFromFilename": null,
+                            "manuallyVerified": false,
+                            "invalid": false,
+                            "exclude": false,
+                            "error": null,
+                            "format": "MP2/3 (MPEG audio layer 2/3)",
+                            "duration": 8689.066667,
+                            "bitRate": 96000,
+                            "language": null,
+                            "codec": "mp3",
+                            "timeBase": "1/14112000",
+                            "channels": 1,
+                            "channelLayout": "mono",
+                            "chapters": [],
+                            "embeddedCoverArt": null,
+                            "metaTags": {
+                                "tagDate": "2023-01-11 00:05"
+                            },
+                            "mimeType": "audio/mpeg"
+                        },
+                        "publishedAt": null,
+                        "addedAt": 1674097378573,
+                        "updatedAt": 1674097378573
+                    },
+                    {
+                        "libraryItemId": "li_884frz7oyaaesl3et9",
+                        "id": "ep_087bxfvqjq04mir4cn",
+                        "index": 2,
+                        "season": "",
+                        "episode": "",
+                        "episodeType": "",
+                        "title": "#352 – Omar Suleiman: Islam",
+                        "subtitle": "Imam Omar Suleiman is the Founder and President of the Yaqeen Institute for Islamic Research and a professor of Islamic Studies at Southern Methodist University. Please support this podcast by checking out our sponsors: – NetSuite: http://netsuite.",
+                        "description": "<p>Imam Omar Suleiman is the Founder and President of the Yaqeen Institute for Islamic Research and a professor of Islamic Studies at Southern Methodist University. Please support this podcast by checking out our sponsors:\n– NetSuite: <a>http://netsuite.com/lex</a> to get free product tour\n– House of Macadamias: <a href=\"https://houseofmacadamias.com/lex\">https://houseofmacadamias.com/lex</a> and use code LEX to get 20% off your first order\n– ExpressVPN: <a href=\"https://expressvpn.com/lexpod\">https://expressvpn.com/lexpod</a> to get 3 months free</p>\n<p>EPISODE LINKS:\nOmar’s Instagram: <a href=\"https://instagram.com/imamomarsuleiman\">https://instagram.com/imamomarsuleiman</a>\nOmar’s Twitter: <a href=\"https://twitter.com/omarsuleiman504\">https://twitter.com/omarsuleiman504</a>\nOmar’s Facebook: <a href=\"https://www.facebook.com/imamomarsuleiman\">https://www.facebook.com/imamomarsuleiman</a>\nYaqeen Institute’s YouTube: <a href=\"https://www.youtube.com/@yaqeeninstituteofficial\">https://www.youtube.com/@yaqeeninstituteofficial</a>\nYaqeen Institute’s Website: <a href=\"https://yaqeeninstitute.org\">https://yaqeeninstitute.org</a></p>\n<p>PODCAST INFO:\nPodcast website: <a href=\"https://lexfridman.com/podcast\">https://lexfridman.com/podcast</a>\nApple Podcasts: <a href=\"https://apple.co/2lwqZIr\">https://apple.co/2lwqZIr</a>\nSpotify: <a href=\"https://spoti.fi/2nEwCF8\">https://spoti.fi/2nEwCF8</a>\nRSS: <a href=\"https://lexfridman.com/feed/podcast/\">https://lexfridman.com/feed/podcast/</a>\nYouTube Full Episodes: <a href=\"https://youtube.com/lexfridman\">https://youtube.com/lexfridman</a>\nYouTube Clips: <a href=\"https://youtube.com/lexclips\">https://youtube.com/lexclips</a></p>\n<p>SUPPORT &amp; CONNECT:\n– Check out the sponsors above, it’s the best way to support this podcast\n– Support on Patreon: <a href=\"https://www.patreon.com/lexfridman\">https://www.patreon.com/lexfridman</a>\n– Twitter: <a href=\"https://twitter.com/lexfridman\">https://twitter.com/lexfridman</a>\n– Instagram: <a href=\"https://www.instagram.com/lexfridman\">https://www.instagram.com/lexfridman</a>\n– LinkedIn: <a href=\"https://www.linkedin.com/in/lexfridman\">https://www.linkedin.com/in/lexfridman</a>\n– Facebook: <a href=\"https://www.facebook.com/lexfridman\">https://www.facebook.com/lexfridman</a>\n– Medium: <a href=\"https://medium.com/@lexfridman\">https://medium.com/@lexfridman</a></p>\n<p>OUTLINE:\nHere’s the timestamps for the episode. On some podcast players you should be able to click the timestamp to jump to that time.\n(00:00) – Introduction\n(08:39) – God\n(16:25) – Loss\n(25:14) – Life after death\n(26:53) – Why God allows suffering\n(40:18) – Seeking the truth\n(47:58) – Islamophobia\n(1:12:55) – Muslim ban\n(1:20:24) – Meaning of prayer\n(1:34:01) – Mecca\n(1:39:12) – Malcolm X\n(1:42:23) – Muhammad Ali\n(1:47:09) – Khabib Nurmagomedov\n(1:53:19) – Prophets\n(1:59:31) – Quran\n(2:05:17) – Ramadan\n(2:12:21) – Future of Islam\n(2:15:30) – Colleyville synagogue hostage crisis\n(2:23:37) – War and religion\n(2:33:29) – Israel and Palestine\n(2:59:13) – Hope for the future\n(3:03:56) – Prayer</p>",
+                        "enclosure": {
+                            "url": "https://media.blubrry.com/takeituneasy/content.blubrry.com/takeituneasy/lex_ai_omar_suleiman.mp3",
+                            "length": "136650118",
+                            "type": "audio/mpeg"
+                        },
+                        "pubDate": "Tue, 17 Jan 2023 17:35:28 +0000",
+                        "audioFile": {
+                            "index": null,
+                            "ino": "75296544",
+                            "metadata": {
+                                "filename": "352-–-Omar-Suleiman-Islam.mp3",
+                                "ext": ".mp3",
+                                "path": "/podcasts/Lex Fridman Podcast/352-–-Omar-Suleiman-Islam.mp3",
+                                "relPath": "352-–-Omar-Suleiman-Islam.mp3",
+                                "size": 136650118,
+                                "mtimeMs": 1674097371680,
+                                "ctimeMs": 1674101672442,
+                                "birthtimeMs": 1674097356809
+                            },
+                            "addedAt": 1674097378428,
+                            "updatedAt": 1674097378428,
+                            "trackNumFromMeta": null,
+                            "discNumFromMeta": null,
+                            "trackNumFromFilename": null,
+                            "discNumFromFilename": null,
+                            "manuallyVerified": false,
+                            "invalid": false,
+                            "exclude": false,
+                            "error": null,
+                            "format": "MP2/3 (MPEG audio layer 2/3)",
+                            "duration": 11236.502,
+                            "bitRate": 96000,
+                            "language": null,
+                            "codec": "mp3",
+                            "timeBase": "1/14112000",
+                            "channels": 1,
+                            "channelLayout": "mono",
+                            "chapters": [],
+                            "embeddedCoverArt": null,
+                            "metaTags": {
+                                "tagDate": "2023-01-17 06:35"
+                            },
+                            "mimeType": "audio/mpeg"
+                        },
+                        "publishedAt": 1673976928000,
+                        "addedAt": 1674097378573,
+                        "updatedAt": 1674101422489
+                    }
+                ],
+                "autoDownloadEpisodes": false,
+                "lastEpisodeCheck": 1674101829564,
+                "maxEpisodesToKeep": 0,
+                "maxNewEpisodesToDownload": 3
+            },
+            "libraryFiles": [
+                {
+                    "ino": "75296545",
+                    "metadata": {
+                        "filename": "351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                        "ext": ".mp3",
+                        "path": "/podcasts/Lex Fridman Podcast/351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                        "relPath": "351-–-Mr-Beast-Future-of-You-Tube,-Twitter,-Tik-Tok,-and-Instagram.mp3",
+                        "size": 107209358,
+                        "mtimeMs": 1674097383520,
+                        "ctimeMs": 1674101672442,
+                        "birthtimeMs": 1674097373082
+                    },
+                    "addedAt": 1674097377994,
+                    "updatedAt": 1674097377994,
+                    "fileType": "audio"
+                },
+                {
+                    "ino": "75296544",
+                    "metadata": {
+                        "filename": "352-–-Omar-Suleiman-Islam.mp3",
+                        "ext": ".mp3",
+                        "path": "/podcasts/Lex Fridman Podcast/352-–-Omar-Suleiman-Islam.mp3",
+                        "relPath": "352-–-Omar-Suleiman-Islam.mp3",
+                        "size": 136650118,
+                        "mtimeMs": 1674097371680,
+                        "ctimeMs": 1674101672442,
+                        "birthtimeMs": 1674097356809
+                    },
+                    "addedAt": 1674097377995,
+                    "updatedAt": 1674097377995,
+                    "fileType": "audio"
+                },
+                {
+                    "ino": "75296543",
+                    "metadata": {
+                        "filename": "folder.png",
+                        "ext": ".png",
+                        "path": "/podcasts/Lex Fridman Podcast/folder.png",
+                        "relPath": "folder.png",
+                        "size": 7813577,
+                        "mtimeMs": 1674097300921,
+                        "ctimeMs": 1674101672442,
+                        "birthtimeMs": 1674097299736
+                    },
+                    "addedAt": 1674097377997,
+                    "updatedAt": 1674097377997,
+                    "fileType": "image"
+                }
+            ],
+            "rssFeed": null
+        },
+        {
+            "id": "li_o52ih8qqtqwfr361lh",
+            "ino": "75301265",
+            "libraryId": "lib_tsg26qi492qdmpmrqu",
+            "folderId": "fol_r2v0rc25nx7kz2oiqm",
+            "path": "/podcasts/You Are Not So Smart",
+            "relPath": "You Are Not So Smart",
+            "isFile": false,
+            "mtimeMs": 1674001944438,
+            "ctimeMs": 1674001944438,
+            "birthtimeMs": 1674001895410,
+            "addedAt": 1674002233214,
+            "updatedAt": 1674172801569,
+            "lastScan": null,
+            "scanVersion": null,
+            "isMissing": false,
+            "isInvalid": false,
+            "mediaType": "podcast",
+            "media": {
+                "libraryItemId": "li_o52ih8qqtqwfr361lh",
+                "metadata": {
+                    "title": "You Are Not So Smart",
+                    "author": "You Are Not So Smart",
+                    "description": null,
+                    "releaseDate": "2023-01-08T10:00:00Z",
+                    "genres": [
+                        "Science",
+                        "Podcasts"
+                    ],
+                    "feedUrl": "https://feeds.simplecast.com/N5eKDxJI",
+                    "imageUrl": null,
+                    "itunesPageUrl": "https://podcasts.apple.com/us/podcast/you-are-not-so-smart/id521594713?uo=4",
+                    "itunesId": 521594713,
+                    "itunesArtistId": null,
+                    "explicit": false,
+                    "language": null
+                },
+                "coverPath": "/podcasts/You Are Not So Smart/folder.jpg",
+                "tags": [],
+                "episodes": [
+                    {
+                        "libraryItemId": "li_o52ih8qqtqwfr361lh",
+                        "id": "ep_prn4pvlj7gxgnbx91s",
+                        "index": 1,
+                        "season": "",
+                        "episode": "",
+                        "episodeType": "full",
+                        "title": "249 - The Power of Surprise (rebroadcast)",
+                        "subtitle": "In this episode, Micheal Rousell, author of The Power of Surprise, explains the science of surprise at the level of neurons and brain structures, and then talk about how surprises often lead to the stories we tell ourselves about ourselves, the different personal narratives that guide our behaviors and motivations and goals, and, perhaps most importantly, our willingness to be surprised again so that we can change and grow.",
+                        "description": "<p>In this episode, Micheal Rousell, author of <a>The Power of Surprise</a>, explains the science of surprise at the level of neurons and brain structures, and then talk about how surprises often lead to the stories we tell ourselves about ourselves, the different personal narratives that guide our behaviors and motivations and goals, and, perhaps most importantly, our willingness to be surprised again so that we can change and grow.</p><p>In the show, you will how we can use the current understanding of how surprise leads to learning, and how learning depends on interpretation, to improve our lives, and the lives of others</p><ul><li>How Minds Change: <a href=\"https://www.davidmcraney.com/howmindschangehome\" target=\"_blank\">www.davidmcraney.com/howmindschangehome</a></li><li>David McRaney’s Twitter: <a href=\"https://twitter.com/davidmcraney\" target=\"_blank\">https://twitter.com/davidmcraney</a></li><li>YANSS Twitter: <a href=\"https://twitter.com/notsmartblog\" target=\"_blank\">https://twitter.com/notsmartblog</a></li><li>Show Notes: <a target=\"_blank\">www.youarenotsosmart.com</a></li><li>Newsletter: <a href=\"https://davidmcraney.substack.com/\" target=\"_blank\">https://davidmcraney.substack.com</a></li></ul>",
+                        "enclosure": {
+                            "length": "58279033",
+                            "type": "audio/mpeg",
+                            "url": "https://stitcher.simplecastaudio.com/aa9f2648-25e9-472a-af42-4e5017da38cf/episodes/cbb185c7-2265-4e79-b60d-69234badd9df/audio/128/default.mp3?aid=rss_feed&awCollectionId=aa9f2648-25e9-472a-af42-4e5017da38cf&awEpisodeId=cbb185c7-2265-4e79-b60d-69234badd9df&feed=N5eKDxJI"
+                        },
+                        "pubDate": "Sat, 24 Dec 2022 14:56:06 +0000",
+                        "audioFile": {
+                            "index": null,
+                            "ino": "75296539",
+                            "metadata": {
+                                "filename": "249-The-Power-of-Surprise-(rebroadcast).mp3",
+                                "ext": ".mp3",
+                                "path": "/podcasts/You Are Not So Smart/249-The-Power-of-Surprise-(rebroadcast).mp3",
+                                "relPath": "249-The-Power-of-Surprise-(rebroadcast).mp3",
+                                "size": 58218803,
+                                "mtimeMs": 1674001948705,
+                                "ctimeMs": 1674001948705,
+                                "birthtimeMs": 1674001944438
+                            },
+                            "addedAt": 1674002234192,
+                            "updatedAt": 1674002234192,
+                            "trackNumFromMeta": null,
+                            "discNumFromMeta": null,
+                            "trackNumFromFilename": null,
+                            "discNumFromFilename": null,
+                            "manuallyVerified": false,
+                            "invalid": false,
+                            "exclude": false,
+                            "error": null,
+                            "format": "MP2/3 (MPEG audio layer 2/3)",
+                            "duration": 3638.648125,
+                            "bitRate": 128000,
+                            "language": null,
+                            "codec": "mp3",
+                            "timeBase": "1/14112000",
+                            "channels": 2,
+                            "channelLayout": "stereo",
+                            "chapters": [],
+                            "embeddedCoverArt": null,
+                            "metaTags": {
+                                "tagArtist": "David McRaney",
+                                "tagTitle": "249 - The Power of Surprise (rebroadcast)",
+                                "tagDate": "2022-12-23 16:23",
+                                "tagComposer": "David McRaney",
+                                "tagComment": "preroll_1;postroll_1",
+                                "tagEncoder": "Lavf58.78.100"
+                            },
+                            "mimeType": "audio/mpeg"
+                        },
+                        "publishedAt": 1671893766000,
+                        "addedAt": 1674002234193,
+                        "updatedAt": 1674006366631
+                    },
+                    {
+                        "libraryItemId": "li_o52ih8qqtqwfr361lh",
+                        "id": "ep_g5pwz6pa0ta8iettbs",
+                        "index": 2,
+                        "season": null,
+                        "episode": null,
+                        "episodeType": "full",
+                        "title": "250 - Awe - Dacher Keltner",
+                        "subtitle": "In this episode we sit down with psychologist Dacher Keltner, one of the world’s leading experts on the science of emotion, the man Pixar hired to help them write Inside Out. In his new book – Awe: The New Science of Everyday Wonder and How It Can Transform Your Life – he outlines his years of work in this field, the health benefits of awe, the evolutionary origins and likely functions, and how to better pursue more awe and wonder in your own life.",
+                        "description": "<p>In this episode we sit down with psychologist Dacher Keltner, one of the world’s leading experts on the science of emotion, the man Pixar hired to help them write Inside Out. In his new book – Awe: The New Science of Everyday Wonder and How It Can Transform Your Life – he outlines his years of work in this field, the health benefits of awe, the evolutionary origins and likely functions, and how to better pursue more awe and wonder in your own life.</p><ul><li>Dacher Kelter: <a href=\"https://psychology.berkeley.edu/people/dacher-keltner\">https://psychology.berkeley.edu/people/dacher-keltner</a></li><li>Greater Good: <a href=\"https://twitter.com/GreaterGoodSC\">https://twitter.com/GreaterGoodSC</a></li><li>How Minds Change: <a href=\"https://www.davidmcraney.com/howmindschangehome\">www.davidmcraney.com/howmindschangehome</a></li><li>Show Notes: <a>www.youarenotsosmart.com</a></li><li>Newsletter: <a href=\"https://davidmcraney.substack.com/\">https://davidmcraney.substack.com</a></li><li>David McRaney’s Twitter: <a href=\"https://twitter.com/davidmcraney\">https://twitter.com/davidmcraney</a></li><li>YANSS Twitter: <a href=\"https://twitter.com/notsmartblog\">https://twitter.com/notsmartblog</a></li></ul>",
+                        "enclosure": {
+                            "length": "52129178",
+                            "type": "audio/mpeg",
+                            "url": "https://stitcher.simplecastaudio.com/aa9f2648-25e9-472a-af42-4e5017da38cf/episodes/03c75577-db3f-4476-a103-1c112e5b7d0b/audio/128/default.mp3?aid=rss_feed&awCollectionId=aa9f2648-25e9-472a-af42-4e5017da38cf&awEpisodeId=03c75577-db3f-4476-a103-1c112e5b7d0b&feed=N5eKDxJI"
+                        },
+                        "pubDate": "Sun, 8 Jan 2023 10:00:00 +0000",
+                        "audioFile": {
+                            "index": null,
+                            "ino": "75296535",
+                            "metadata": {
+                                "filename": "250-Awe-Dacher-Keltner.mp3",
+                                "ext": ".mp3",
+                                "path": "/podcasts/You Are Not So Smart/250-Awe-Dacher-Keltner.mp3",
+                                "relPath": "250-Awe-Dacher-Keltner.mp3",
+                                "size": 52128762,
+                                "mtimeMs": 1674001943621,
+                                "ctimeMs": 1674001943621,
+                                "birthtimeMs": 1674001938850
+                            },
+                            "addedAt": 1674002234191,
+                            "updatedAt": 1674002234191,
+                            "trackNumFromMeta": null,
+                            "discNumFromMeta": null,
+                            "trackNumFromFilename": null,
+                            "discNumFromFilename": null,
+                            "manuallyVerified": false,
+                            "invalid": false,
+                            "exclude": false,
+                            "error": null,
+                            "format": "MP2/3 (MPEG audio layer 2/3)",
+                            "duration": 3258.017938,
+                            "bitRate": 128000,
+                            "language": null,
+                            "codec": "mp3",
+                            "timeBase": "1/14112000",
+                            "channels": 2,
+                            "channelLayout": "stereo",
+                            "chapters": [],
+                            "embeddedCoverArt": null,
+                            "metaTags": {
+                                "tagArtist": "250 - Awe - Dacher Keltner",
+                                "tagTitle": "YANSSBetterHelpJan12023",
+                                "tagDate": "2022-12-23 16:23",
+                                "tagComposer": "David McRaney",
+                                "tagEncoder": "Lavf58.78.100"
+                            },
+                            "mimeType": "audio/mpeg"
+                        },
+                        "publishedAt": 1673172000000,
+                        "addedAt": 1674002234193,
+                        "updatedAt": 1674006389130
+                    }
+                ],
+                "autoDownloadEpisodes": true,
+                "autoDownloadSchedule": "0 0 * * *",
+                "lastEpisodeCheck": 1674172801569,
+                "maxEpisodesToKeep": "5",
+                "maxNewEpisodesToDownload": 3
+            },
+            "libraryFiles": [
+                {
+                    "ino": "75296539",
+                    "metadata": {
+                        "filename": "249-The-Power-of-Surprise-(rebroadcast).mp3",
+                        "ext": ".mp3",
+                        "path": "/podcasts/You Are Not So Smart/249-The-Power-of-Surprise-(rebroadcast).mp3",
+                        "relPath": "249-The-Power-of-Surprise-(rebroadcast).mp3",
+                        "size": 58218803,
+                        "mtimeMs": 1674001948705,
+                        "ctimeMs": 1674001948705,
+                        "birthtimeMs": 1674001944438
+                    },
+                    "addedAt": 1674002233209,
+                    "updatedAt": 1674002233209,
+                    "fileType": "audio"
+                },
+                {
+                    "ino": "75296535",
+                    "metadata": {
+                        "filename": "250-Awe-Dacher-Keltner.mp3",
+                        "ext": ".mp3",
+                        "path": "/podcasts/You Are Not So Smart/250-Awe-Dacher-Keltner.mp3",
+                        "relPath": "250-Awe-Dacher-Keltner.mp3",
+                        "size": 52128762,
+                        "mtimeMs": 1674001943621,
+                        "ctimeMs": 1674001943621,
+                        "birthtimeMs": 1674001938850
+                    },
+                    "addedAt": 1674002233209,
+                    "updatedAt": 1674002233209,
+                    "fileType": "audio"
+                },
+                {
+                    "ino": "75296536",
+                    "metadata": {
+                        "filename": "folder.jpg",
+                        "ext": ".jpg",
+                        "path": "/podcasts/You Are Not So Smart/folder.jpg",
+                        "relPath": "folder.jpg",
+                        "size": 630753,
+                        "mtimeMs": 1674001895993,
+                        "ctimeMs": 1674001895993,
+                        "birthtimeMs": 1674001895410
+                    },
+                    "addedAt": 1674002233210,
+                    "updatedAt": 1674002233210,
+                    "fileType": "image"
+                }
+            ],
+            "rssFeed": null
+        }
+    ],
+    "total": 2,
+    "limit": 100,
+    "page": 0,
+    "sortBy": "media.metadata.title",
+    "sortDesc": false,
+    "mediaType": "podcast",
+    "minified": false,
+    "collapseseries": false,
+    "include": "rssfeed"
+}
