@@ -479,6 +479,9 @@ const fetchAudiobookshelf = async (inBackground = false) => {
 
           for (const podcast of podcasts) {
             console.log(podcast);
+            if ( !('episodes' in podcast.media) || podcast.media.episodes.length == 0) {
+              continue;
+            }            
             for (const episode of podcast.media.episodes) {
               const itemProgress = await userMediaProgress(
                 audiobookshelfUser,
